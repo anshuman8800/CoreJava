@@ -1,24 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        HourlyEmployee anny = new HourlyEmployee(
-                "anny",
-                "2000",
-                "2023",
-                101,
-                "2020",
-                2000
-        );
-        System.out.println(anny.toString());
+        String name = "Anshuman";
+        String nameTemp = name;
+        name += "Kumar"; // It will change name to AnshumanKumar, but the nameTemp will remain unchanged
+        System.out.println("name : " + name); // AnshumanKumar
+        System.out.println("nameTemp : " + nameTemp); // Anshuman
 
-        SalaryEmployee aniket = new SalaryEmployee(
-                "aniket",
-                "1999",
-                "2024",
-                102,
-                "2015",
-                300000,
-                false
-        );
-        System.out.println(aniket.toString());
+
+
+
+        StringBuilder newName = new StringBuilder("Anshuman");
+        StringBuilder newNameTemp = newName;
+        newName.append("Kumar"); // it will change newName to AnshumanKumar as well as newNameTemp also changed
+        System.out.println("newName : "+ newName); // AnshumanKumar
+        System.out.println("newNameTemp : " + newNameTemp); // AnshumanKumar
     }
 }
