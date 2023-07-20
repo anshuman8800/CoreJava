@@ -1,22 +1,20 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        GamePlayer anny = new GamePlayer("anny", 100);
-        System.out.println("annyCurrent health " + anny.getHealth());
-        anny.damageHealth(15);
-        System.out.println("annyCurrent health " + anny.getHealth());
-        anny.damageHealth(50);
-        System.out.println("annyCurrent health " + anny.getHealth());
-        anny.addHealth(8);
-        System.out.println("annyCurrent health " + anny.getHealth());
-        System.out.println("Player Info " + anny.toString());
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter Type (A for Adventure, C for Comedy, " + "S for Science Fiction, or Q to quit): ");
+            String type = scanner.nextLine();
+
+            if ("Qq".contains(type)) {
+                break;
+            }
+            System.out.print("Enter Movie Title: ");
+            String title = scanner.nextLine();
+            Movie movie = Movie.getMovie(type, title);
+            movie.watchMovie();
+        }
     }
 }
-
-/*
-OUTPUT
-annyCurrent health 100.0
-annyCurrent health 85.0
-annyCurrent health 35.0
-annyCurrent health 43.0
-Player Info GamePlayer{name='anny', health=43.0}
-* */
