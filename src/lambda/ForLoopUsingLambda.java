@@ -23,5 +23,14 @@ public class ForLoopUsingLambda {
             char firstLetter = s.charAt(0);
             System.out.println(s + " with " + firstLetter);
         });
+        int result = calculator((a, b) -> a+b, 5,6);
+
+        System.out.println("5 + 6 = " + result);
+    }
+
+    public static <T> T calculator(Operation<T> function, T value1, T value2) {
+        T result = function.operate(value1, value2);
+        System.out.println("result is " + result);
+        return result;
     }
 }
