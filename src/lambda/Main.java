@@ -2,7 +2,6 @@ package lambda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -24,15 +23,18 @@ public class Main {
             );
 
             // using Anonymous Class
-            var comparatorLastName = new Comparator<Person>() {
+//            var comparatorLastName = new Comparator<Person>() {
+//
+//                @Override
+//                public int compare(Person o1, Person o2) {
+//                    return o1.lastName.compareTo(o2.lastName);
+//                }
+//            };
+//
+//            people.sort(comparatorLastName);
 
-                @Override
-                public int compare(Person o1, Person o2) {
-                    return o1.lastName.compareTo(o2.lastName);
-                }
-            };
-
-            people.sort(comparatorLastName);
+            // using lambda expression
+            people.sort((o1, o2) -> o1.lastName.compareTo(o2.lastName));
             System.out.println(people);
         }
     }
