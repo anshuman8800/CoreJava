@@ -20,6 +20,17 @@ public class PredicateDemo {
         myList.forEach(
                 (t) -> System.out.println("for the number " + t + " result is " + checkPositive.test(t))
         );
+        System.out.println("print the list");
+        myList.forEach((t) -> System.out.println(t));
+        System.out.println("print the filter");
+        myList.stream().filter((t) -> {
+            if(t >= 0)
+                return true;
+            return false;
+        }).forEach((t) -> {
+            System.out.println("-->" + t);
+            System.out.println();
+        });
 
 
         Predicate<Integer> checkEven = (t) -> {
