@@ -2,6 +2,7 @@ package lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class PredicateDemo {
@@ -40,5 +41,11 @@ public class PredicateDemo {
         };
 
         System.out.println("16 is even ? " + checkEven.test(16));
+
+        BiPredicate<Integer, Integer> checkEqual = (t, u) -> {
+            System.out.println("comparing " + t + " with " + u);
+            return t == u;
+        };
+        System.out.println("check equality " + checkEqual.test(10, 10));
     }
 }
