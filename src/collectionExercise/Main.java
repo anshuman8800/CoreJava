@@ -1,4 +1,4 @@
-package dev.lpa;
+package collectionExercise;
 
 import java.util.Collection;
 import java.util.HashSet;
