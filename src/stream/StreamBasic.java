@@ -3,6 +3,7 @@ package stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamBasic {
     public static void main(String[] args) {
@@ -28,5 +29,18 @@ public class StreamBasic {
 
         String result = data.stream().map(String::valueOf).collect(Collectors.joining());
         System.out.println("result is " + result);
+
+        long start = System.currentTimeMillis();
+        IntStream.range(0, 1000).forEach(t -> System.out.println(t));
+        long end = System.currentTimeMillis();
+        System.out.println("time it takes " + (end-start));
+
+
+        start = System.currentTimeMillis();
+        IntStream.range(0, 1000).parallel().forEach(t -> System.out.println(t));
+        end = System.currentTimeMillis();
+        System.out.println("time it takes " + (end-start));
+
+
     }
 }
