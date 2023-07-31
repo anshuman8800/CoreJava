@@ -10,30 +10,22 @@ public class Main {
         Thread newThreadFromRunnableClass = new Thread(newMyRunnable);
         newThreadFromRunnableClass.start();
         Thread tempThread = new Thread(() -> {
-            int i = 0;
-            while(true) {
-                System.out.println("i " + i);
-                i++;
-            }
+            System.out.println("thread0");
         });
 
         Thread tempThread1 = new Thread(() -> {
-            int i = 0;
-            while(true) {
-                System.out.println("j " + i);
-                i++;
-            }
+            System.out.println("thread1");
         });
 
         Thread tempThread2 = new Thread(() -> {
-            int i = 0;
-            while(true) {
-                System.out.println("k " + i);
-                i++;
-            }
+            System.out.println("thread2");
         });
+        System.out.println("T0 priority : " + tempThread.getPriority());
+        System.out.println("T1 priority" + tempThread1.getPriority());
+        tempThread1.setPriority(10);
+        System.out.println("T1 priority " + tempThread1.getPriority());
         tempThread.start();
-        tempThread2.start();
         tempThread1.start();
+        tempThread2.start();
     }
 }
